@@ -1,0 +1,1080 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+    <head> 
+	<meta http-equiv="Content-Type" content="text/html; charset=cp949" /> 
+	<title>네이트 뉴스</title> 
+	<script type="text/javascript" src="http://newscomm.nate.com/userJS?r=1981171884"></script>		<link rel="stylesheet" type="text/css" href="http://news.nate.com/css/iframe/reple_v201009.css?N_2012111310" />			<script type="text/javascript" src="http://www.cyworld.com/js/mall/cyWebFont.js"></script>
+	<script type="text/javascript" src="http://news.nate.com/js/prototype.js?N_2012111310"></script>
+	<script type="text/javascript" src="http://news.nate.com/js/common.js?N_2012111310"></script>
+	<script type="text/javascript" src="http://news.nate.com/js/reply.js?N_2012111310"></script>
+	<script type="text/javascript" src="http://newscomm.nate.com/etc/userJS?r=1959256604"></script>
+	<script type="text/javascript" src="http://common.nate.com/nameUI/CommonScript.aspx"></script>	<script type="text/javascript">
+	//<![CDATA[
+		function go_default(wparam) {
+			
+			var url = '/Comment/ArticleComment/List?artc_sq=20121119n11790&page=1&order=&cmtr_fl=0&prebest=0&newstalk=0&clean_idx=&user_nm=&fold=&mid=e0103&domain=&vodList=0&return_sq=&twitterAuth=N&connectAuth=N&domain=&popup=0';
+			if (wparam != null && trim(wparam) != '') {
+				url += '&'+wparam;
+			}
+			document.location.href=url;
+		}
+	//]]>
+	</script>	<script type="text/javascript">
+	//<![CDATA[
+		function go_nooption(wparam) {
+			
+			var url = '/Comment/ArticleComment/List?artc_sq=20121119n11790&mid=e0103&domain=&popup=0';
+									if (wparam != null && trim(wparam) != '') {
+				url += '&'+wparam;
+			}
+			document.location.href=url;
+		}
+	//]]>
+	</script>
+	<link rel="stylesheet" type="text/css" href="http://news.nate.com/css/section_newsTalk.css?N_2012111310" />
+<script type="text/javascript" charset="euc-kr" src="http://news.nate.com/js/stat.js?N_2012111310"></script>
+<script type="text/javascript" charset="euc-kr" src="http://news.nate.com/js/common.js?N_2012111310"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+
+window.onload = function() {
+	resizeIfr(parent.document.getElementById('ifr_reple'));
+	$('p_url').value = parent.location.href;
+	var bShowList = "1";
+	if(bShowList && document.getElementById("user_nm")) document.getElementById("user_nm").setAttribute("autocomplete","off");
+}
+		
+function getCleanIndexList(clean_index){
+	location.href = "list?artc_sq=20121119n11790&clean_idx="+clean_index+"&mid=e0103&domain=";
+}
+
+
+function clearVodUrl() {
+    if (confirm("첨부된 동영상을 삭제하시겠습니까?")){
+         // 동영상 url 정보 삭제
+        document.getElementById("reImg").value = "";
+        document.getElementById("itemTitle").value = "";
+        document.getElementById("reUrl").value = "";
+        document.getElementById("videoId").value = "";
+        document.getElementById("runtime").value = "";
+        document.getElementById("sType").value = "";
+        document.getElementById("vodFlag").value = "";
+        document.getElementById("generic").value = "";
+        
+        document.getElementById("vodUrl").innerHTML = "";
+        document.getElementById("clearVodUrl").style.display = "none";
+    }
+   
+}
+
+function bubbleTextOn() {
+     document.getElementById("bubbleText").style.display = "inline";
+}
+
+function closeBubbleText() {
+     document.getElementById("bubbleText").style.display = "none";
+}
+
+function writeAttach(writeAttach, popurl, width,height){
+    var writeAttach = writeAttach;
+    var popurl = popurl;
+    var width = width;
+    var height = height;
+    
+    if (0 == writeAttach) {
+        if ( bLogin == '0' ) {
+            checkLoginIframe();
+            return;
+        } else {
+            alert('클린지수 90점 이상이며, 최근 1년 동안 댓글을 5개 이상 작성하신 경우에만 동영상 첨부가 가능합니다.');
+            return;
+        }
+        
+    } else {
+        OpenPopup(popurl, width,height, '');
+    }
+ 
+}
+
+//]]>	
+</script>
+
+</head><body style="margin:0;padding:0;" > 
+<a name="comment"></a>
+	<div class="commentBox reply_hide">
+						<div class="reply_notice"> 
+						 
+			<em>[공지]</em> <a href="http://newscomm.nate.com/enews/noticeView?bbs_grp_gb=NOTICE&amp;bbs_sq=299&amp;ctgr_cd=N&amp;post_sq=2813323&amp;page=1" target="_blank" onclick="ndrclick('RMV20');">네이트 뉴스 댓글 개선 작업 안내</a>
+						<span class="bar">| </span> 
+			<em>[공지]</em> <a href="http://newscomm.nate.com/enews/noticeView?bbs_grp_gb=NOTICE&amp;bbs_sq=299&amp;ctgr_cd=N&amp;post_sq=2790323&amp;page=1" target="_blank" onclick="ndrclick('RMV20');">불공정 선거보도 서비스 안내</a>
+					</div>				<div class="cmt_write_wrap">
+			<!-- 댓글 입력폼 -->
+			<iframe id="cmt_hidden" name="cmt_hidden" style="display:none;"></iframe>
+			<iframe id="twitter_hidden" name="twitter_hidden" style="display:none;"></iframe>
+			<form action="writeAction" method="post" target="cmt_hidden" name="write">
+			<input type="hidden" name="__natkn" value="" />
+			<input type="hidden" id="artc_sq" name="artc_sq" value="20121119n11790" />
+			<input type="hidden" name="p_url" id="p_url" value="" />
+			<input type="hidden" name="mid" value="e0103" />
+			<input type="hidden" name="page" value="" />
+			
+			<!-- 동영상정보 입력 S-->
+			<input type="hidden" id="reImg" name="reImg" value="" />
+			<input type="hidden" id="itemTitle" name="itemTitle" value="" />
+			<input type="hidden" id="reUrl" name="reUrl" value="" />
+			<input type="hidden" id="videoId" name="videoId" value="" />
+			<input type="hidden" id="runtime" name="runtime" value="" />
+			<input type="hidden" id="sType" name="sType" value="" />
+			<input type="hidden" id="vodFlag" name="vodFlag" value="" />
+			<input type="hidden" id="generic" name="generic" value="" />
+			<!-- 동영상정보 입력 E-->
+			
+			<fieldset class="cmt_write">
+				<legend>댓글 입력 영역</legend>
+				<dl class="opinion f_clear">
+                    <dt>댓글쓰기 
+                        <dd class="text_size">[<span id="tacnt">0</span> / 1000 자]</dd>
+                    </dt>
+                    <dd class="movie">
+                        <em>|</em>
+                         <a href="javascript:writeAttach('0','http://newscomm.nate.com/artcVod/',600,705);" title="동영상 첨부" onclick="ndrclick2('RGL32')">
+                         <img src="http://nimg.nate.com/etc/ui/images/icon/ico_play.gif" alt="동영상" /> 동영상첨부</a>
+                         <a href="javascript:bubbleTextOn();" title=""><img src="http://nimg.nate.com/etc/ui/images/icon/ico_question.gif" alt="" /></a>
+                         <span id="vodUrl"></span>
+                         <a href="javascript:clearVodUrl();" id="clearVodUrl" class="ico_del" title="삭제" style="display:none;"><img src="http://nimg.nate.com/etc/ui/images/icon/ico_delete.gif" alt="삭제" /></a>
+                         <div class="movieLayer on" id="bubbleText" style="display:none">
+                            <strong>클린지수 90점</strong> 이상이며, 최근 1년 동안 댓글을 5개 이상 작성하신 경우에만 동영상 첨부가 가능합니다.
+                            <a href="javascript:closeBubbleText();" title="닫기">닫기</a>
+                        </div>
+                    </dd>
+                </dl>
+				
+				<dl class="writing">
+                    <dt>댓글</dt>
+                    <dd>
+                        <textarea cols="85" rows="3" title="댓글 입력" name="cmt_content" id="cmt_content" onfocus="closeBubbleText();init_textarea(this);" onkeyup="closeBubbleText();count_textarea(this,'tacnt');">로그인 해주세요.</textarea>
+						<input type="image" src="http://nimg.nate.com/etc/ui/images/button/btn_confirm02.gif" alt="확인" onclick="return check_textarea($('cmt_content'));" /> 
+                    </dd>
+                </dl>
+				
+				<dl class="option">
+                    <dt>선택사항</dt>
+                    <dd class="fl">
+                        <input type="checkbox" id="minihomeDisc02" name="other_fl" value="N" onclick="ndrclick('RMV22')" /><label for="minihomeDisc02">내 다른 댓글 안보임</label>
+                        <input type="hidden" id="hompy_fl" name="hompy_fl" value="N" />
+                                            </dd>
+                </dl>
+                
+			</fieldset>
+			</form>
+		</div>
+		
+		
+				<div class="replytab_wrap">
+			<ul class="subTab f_clear">
+				<li style="display:;"><a href="list?artc_sq=20121119n11790&amp;fold=0&amp;mid=e0103&amp;domain=" class="selected" onclick="ndrclick('RMV24');">댓글 <strong>14</strong></a></li>
+				<li style="display:none;"><a href="list?artc_sq=20121119n11790&amp;cmtr_fl=1&amp;fold=0&amp;mid=e0103&amp;domain="  onclick="ndrclick('RMV25');">기자 댓글 <strong>0</strong></a></li>
+				<li style="display:none;"><a href="list?artc_sq=20121119n11790&amp;prebest=1&amp;order=O&amp;fold=0&amp;mid=e0103&amp;domain="  onclick="ndrclick('RMV26');">예비 베플 <strong>0</strong></a></li>
+				<li style="display:none;"><a href="list?artc_sq=20121119n11790&amp;newstalk=1&amp;fold=0&amp;mid=e0103&amp;domain=" >뉴스&amp;톡 <strong>0</strong></a></li>
+				<li style="display:;"><a href="list?artc_sq=20121119n11790&amp;vodList=1&amp;order=''&amp;fold=0&amp;mid=e0103&amp;domain="  onclick="ndrclick('RMV100');">동영상 댓글 <strong>1</strong></a></li>
+			</ul>
+			<div class="replyToggle"><a href="javascript:go_nooption('fold=1');" onclick="ndrclick('RMV27');callolap('/reply/');">댓글숨기기 <img width="5" height="3" src="http://nimg.nate.com/etc/ui/images/button/btn_arrow_up.gif" alt="댓글 숨기기" /></a></div> 
+		</div>
+		
+		<div>
+			<dl class="cmt_search">
+				<dt class="t_hide">댓글 운영 원칙</dt>
+				<dd><a href="javascript:OpenOperText();">댓글 운영 원칙 보기</a></dd>
+			</dl>
+			<div class="clear"></div>
+			
+					
+							<!-- 뉴스톡 -->
+								<!-- //뉴스톡 -->
+				<!-- S :: 베스트 댓글 -->
+									<div class="cmt_best">
+						<p class="t_hide"><strong>베스트 댓글</strong></p>
+						<dl class="cmt_item f_line">
+							<dt>
+								<img src="http://nimg.nate.com/etc/ui/images/mnews/ico_beple.gif" width="29" height="13" alt="베플" /> 
+								sky8****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="best_cmtuser_btn_132841205" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('best', '132841205', 'zgnJzqTKaMh6bgX=');" onmouseout="_nc_hide('best_cmtuser_ui_132841205');" class="reico" /><span class="date"><em>|</em> 11.19 13:33</span>
+									<dd id="best_cmtuser_ui_132841205" style="display:none;" onmouseover="_nc_show('best_cmtuser_ui_132841205');" onmouseout="_nc_hide('best_cmtuser_ui_132841205');"> 
+									<!-- 기자레이어 --> 
+									<div id="best_cmtuser_uilayer_132841205" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('best_cmtuser_ui_132841205');" onmouseout="_nc_hide('best_cmtuser_ui_132841205');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="best_clean_idx_132841205"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							
+							<!-- 추천반대 --> 
+							<dd id="best_cmtvote_132841205" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841205&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841205', 1 ,'best');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841205" name="cmt_o_cnt_132841205">98</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841205&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841205', -1,'best');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841205" name="cmt_x_cnt_132841205">5</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							<dd id="best_cmtcontent_132841205" class="usertxt"> 
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />댓글이 하나도없는데 30위네..?<br />
+성별반전 이미 10여년전에 H 잊었니 뮤비에서<br />
+엄정화누님이했다.<br />
+언플도 좀 신선한걸로하던가								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841205" onclick="return report(this, '132841205', 'best');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="best_cmtreport_btn_132841205" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							
+							<!-- 동영상 댓글 -->
+														<!-- //동영상 댓글 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841205','best',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841205" name="reply_cnt_132841205">10</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+		
+																<div style="display:none" id="divReply_best_132841205"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl><dl class="cmt_item">
+							<dt>
+								<img src="http://nimg.nate.com/etc/ui/images/mnews/ico_beple.gif" width="29" height="13" alt="베플" /> 
+								izur****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="best_cmtuser_btn_132842385" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('best', '132842385', 'zgnJzMz0aMlJzMT=');" onmouseout="_nc_hide('best_cmtuser_ui_132842385');" class="reico" /><span class="date"><em>|</em> 11.19 14:04</span>
+									<dd id="best_cmtuser_ui_132842385" style="display:none;" onmouseover="_nc_show('best_cmtuser_ui_132842385');" onmouseout="_nc_hide('best_cmtuser_ui_132842385');"> 
+									<!-- 기자레이어 --> 
+									<div id="best_cmtuser_uilayer_132842385" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('best_cmtuser_ui_132842385');" onmouseout="_nc_hide('best_cmtuser_ui_132842385');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="best_clean_idx_132842385"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							
+							<!-- 추천반대 --> 
+							<dd id="best_cmtvote_132842385" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842385&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842385', 1 ,'best');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842385" name="cmt_o_cnt_132842385">32</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842385&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842385', -1,'best');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842385" name="cmt_x_cnt_132842385">12</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							<dd id="best_cmtcontent_132842385" class="usertxt"> 
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />오수민 이번 앨범만 들어본 색히들은 막귀 인정해라 ㅋㅋㅋ<br />
+정인 모창이라니 ㅋㅋㅋㅋㅋ<br />
+예전에 네티즌들은 JK김동욱이 임재범과 비슷하다고 보급형 임재범이라고 하더니 얼척없넹<br />
+오수민이 버벌진트 좋아보여 파트2한거 일단 들어보고<br />
+그 전에 로맨틱데이 라는 곡 들어봐라 나이에 비해 표현력이 깊은 보컬이다 ㅋㅋ<br />
+정인 느낌이 나는건 정인이 유명해서 그런거 아님???<br />
+그럼 투개월 걔는?????								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842385" onclick="return report(this, '132842385', 'best');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="best_cmtreport_btn_132842385" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							
+							<!-- 동영상 댓글 -->
+														<!-- //동영상 댓글 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842385','best',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842385" name="reply_cnt_132842385">7</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+		
+																<div style="display:none" id="divReply_best_132842385"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl><dl class="cmt_item">
+							<dt>
+								<img src="http://nimg.nate.com/etc/ui/images/mnews/ico_beple.gif" width="29" height="13" alt="베플" /> 
+								cspi****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="best_cmtuser_btn_132842191" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('best', '132842191', 'zgnJzMn0zMnJaWh=');" onmouseout="_nc_hide('best_cmtuser_ui_132842191');" class="reico" /><span class="date"><em>|</em> 11.19 13:59</span>
+									<dd id="best_cmtuser_ui_132842191" style="display:none;" onmouseover="_nc_show('best_cmtuser_ui_132842191');" onmouseout="_nc_hide('best_cmtuser_ui_132842191');"> 
+									<!-- 기자레이어 --> 
+									<div id="best_cmtuser_uilayer_132842191" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('best_cmtuser_ui_132842191');" onmouseout="_nc_hide('best_cmtuser_ui_132842191');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="best_clean_idx_132842191"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							
+							<!-- 추천반대 --> 
+							<dd id="best_cmtvote_132842191" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842191&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842191', 1 ,'best');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842191" name="cmt_o_cnt_132842191">24</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842191&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842191', -1,'best');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842191" name="cmt_x_cnt_132842191">7</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							<dd id="best_cmtcontent_132842191" class="usertxt"> 
+								아무리 아이돌도 아니고 인기가 없는 가수라도 기사 댓글 싸지른거보소 ㅋㅋㅋ<br />
+ㅅㅂ 너네는 아이돌 가수 기사가 상위권 올라가도 댓글에 일일히 언플언플 거릴래??<br />
+그리고 정인 카피니 뭐니 하는 놈들아 귀좀 열고 영상 봐라 다양한 음색을 자유롭게 표현하는건 안보임??<br />
+수준들 하고는 쩝...								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842191" onclick="return report(this, '132842191', 'best');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="best_cmtreport_btn_132842191" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							
+							<!-- 동영상 댓글 -->
+														<dd class="movieWrap">
+                                <a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="" class="thumb" target="_blank"><img src="http://mpimg.video.cyworld.com/cthumb120x90/http://mpmedia560.video.cyworld.com/img/001/70/00/09/B_20121107081101583525731001.jpg" onerror="blankImg2(this,0,0);" alt="" width="78" height="58" /><em>01:40</em><span class="bg_opacity"></span></a>
+                                <div class="movieLink">
+                                    <a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="오수민 - 강남스타일 7인 모창 (정인, 이소라, 김예림, 이소은, 이수영, 바다, 보아)" target="_blank">[네이트] 오수민 - 강남스타일 7인 모창 (정인, 이소라, 김예림, 이소은, 이수영, 바다, 보아)</a>                                                                        <br />
+                                    <a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="오수민 - 강남스타일 7인 모창 (정인, 이소라, 김예림, 이소은, 이수영, 바다, 보아)" class="url" target="_blank">http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&list_type=2&urlstr=video&board_no=43&seq=43&item_seq=101298616&item_seq_main=101298616&folder_part=3</a>
+                                    <p><a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="동영상 보기" class="viewMovie" target="_blank">동영상 보기</a></p>
+                                </div>
+                            </dd>
+                            							<!-- //동영상 댓글 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842191','best',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842191" name="reply_cnt_132842191">4</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+		
+																<div style="display:none" id="divReply_best_132842191"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>					</div>
+								<!-- E ::  베스트 댓글 -->
+	
+														<!-- S :: 새로 작성된 댓글 -->
+					<div class="newreplyArea" style="display:;">
+						<div class="comment">
+												<script type="text/javascript">
+						//<![CDATA[
+							var check_period_millisec = 60*1000; // 갱신 주기
+							var check_max_limit = (30*(60*1000))/check_period_millisec; // 30분간
+							var check_cnt = 0; // 갱신 횟수
+							var check_stop = false; // 갱신 종료 여부
+							function check_new() {
+			
+								// 중단 조건 확인
+								if ( check_cnt > check_max_limit || check_stop == true ) {
+									return;
+								}
+			
+								var url = 'recent?artc_sq=20121119n11790&cmt_sq=132843671';
+								var ajax = new Ajax.Request(
+									url,
+									{
+										method: "get",
+										onSuccess: function(res) {
+											var resjson		= eval('('+res.responseText+')');
+											var styledisplay = 'none';
+											var msg = '';
+			
+											if ( resjson.aftercnt > 0 ) {
+												styledisplay = '';
+												msg = '새로 작성된 댓글이 <strong>' + resjson.aftercnt + '</strong>개';
+												if ( resjson.more ) {
+													msg += ' 이상';
+												}
+												msg += ' 있습니다.'
+												msg += ' <img src="http://nimg.nate.com/etc/ui/images/button/btn_refesh.gif" alt="새로고침" />';
+											}
+			
+											var obj_newcmt = $('newcmt');
+											obj_newcmt.innerHTML = msg;
+											obj_newcmt.style.display = styledisplay;
+			
+											check_cnt++;
+											if ( check_cnt > check_max_limit || resjson.more == true ) {
+												check_stop = true;
+											} else {
+												window.setTimeout( check_new, check_period_millisec );
+											}
+										},
+										onFailure: function(res) {
+											// 실패시 장애 확대를 피하기 위해 종료한다.
+											check_stop = true;
+										}
+									}
+								);
+							}
+							window.setTimeout( check_new, check_period_millisec );
+						//]]>
+						</script>
+						<div class="comment"><a href="javascript:go_default();" onclick="ndrclick('RMV34');callolap('/reply/');" id="newcmt" style="display:none;"></a></div> 
+												</div>
+						<ul class="replyAlign">
+							<li class="cleanNum"><a href="http://newscomm.nate.com/enews/noticeView?bbs_grp_gb=NOTICE&amp;bbs_sq=299&amp;ctgr_cd=N&amp;post_sq=2516758&amp;page=1';" target="_top">클린지수</a></li>
+							<li class="selectNum">
+								<!-- selecteDesign -->
+								<div class="selectDesign">
+									<h5><a id="selectClick" href="#selectDesign" onclick="showOtherMatch();return false;">전체<span style="display:none;">↑</span></a></h5>
+									<ul id="selectDesign" style="display:none;">
+										<li ><a href="javascript:getCleanIndexList(null);" onclick="ndrclick('RMV35');">전체</a></li>
+										<li ><a href="javascript:getCleanIndexList(100);" onclick="ndrclick('RMV35');">100</a></li>
+										<li ><a href="javascript:getCleanIndexList(90);" onclick="ndrclick('RMV35');">90<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(80);" onclick="ndrclick('RMV35');">80<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(70);" onclick="ndrclick('RMV35');">70<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(60);" onclick="ndrclick('RMV35');">60<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(50);" onclick="ndrclick('RMV35');">50<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(40);" onclick="ndrclick('RMV35');">40<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(30);" onclick="ndrclick('RMV35');">30<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(20);" onclick="ndrclick('RMV35');">20<span>↑</span></a></li>
+										<li ><a href="javascript:getCleanIndexList(10);" onclick="ndrclick('RMV35');">10<span>↑</span></a></li>
+									</ul>
+								</div>
+								<!-- //selecteDesign -->
+								<span class="bar">|</span>
+							</li>
+							<li><a href="list?artc_sq=20121119n11790&amp;cmtr_fl=0&amp;prebest=0&amp;mid=e0103&amp;domain=&amp;vodList=0" class="on" onclick="ndrclick('RMV36');">시간순</a><span class="bar">|</span></li>
+							<li><a href="list?artc_sq=20121119n11790&amp;cmtr_fl=0&amp;prebest=0&amp;order=O&amp;mid=e0103&amp;domain=&amp;vodList=0"  onclick="ndrclick('RMV37');">추천순</a><span class="bar">|</span></li>
+							<li><a href="list?artc_sq=20121119n11790&amp;cmtr_fl=0&amp;prebest=0&amp;order=X&amp;mid=e0103&amp;domain=&amp;vodList=0"  onclick="ndrclick('RMV38');">반대순</a></li>
+							
+						</ul>
+					</div>
+					<!-- E :: 새로 작성된 댓글 -->
+										
+										<div class="cmt_list">
+						<p class="t_hide"><strong>일반 댓글</strong></p>
+						<!-- S :: 리턴 댓글 -->
+												<!-- E :: 리턴 댓글 -->
+						
+						<!-- S :: 일반 댓글 -->
+																		<dl class="cmt_item f_line">
+							<dt>
+							maco****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132843671" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132843671', 'zgnJzqX6zWdLaMv=');" onmouseout="_nc_hide('list_cmtuser_ui_132843671');" class="reico" /><span class="date"><em>|</em> 11.19 14:39</span>
+								<dd id="list_cmtuser_ui_132843671" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132843671');" onmouseout="_nc_hide('list_cmtuser_ui_132843671');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132843671" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132843671');" onmouseout="_nc_hide('list_cmtuser_ui_132843671');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132843671"></strong><em>/</em>100점</li> 
+																						<li><a href="javascript:pop_user_cmt('zgnJzqX6zWdLaMv=', 'maco**** ');" onclick="ndrclick('RMV42');">다른댓글보기</a></li> 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132843671" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132843671&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132843671', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132843671" name="cmt_o_cnt_132843671">0</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132843671&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132843671', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132843671" name="cmt_x_cnt_132843671">9</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132843671" class="usertxt" >
+								유재석 내가 평생 저주하리라								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132843671" onclick="return report(this, '132843671', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132843671" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132843671','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132843671" name="reply_cnt_132843671">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132843671"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							maco****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132843660" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132843660', 'zgnJzqX6zWdLaMv=');" onmouseout="_nc_hide('list_cmtuser_ui_132843660');" class="reico" /><span class="date"><em>|</em> 11.19 14:39</span>
+								<dd id="list_cmtuser_ui_132843660" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132843660');" onmouseout="_nc_hide('list_cmtuser_ui_132843660');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132843660" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132843660');" onmouseout="_nc_hide('list_cmtuser_ui_132843660');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132843660"></strong><em>/</em>100점</li> 
+																						<li><a href="javascript:pop_user_cmt('zgnJzqX6zWdLaMv=', 'maco**** ');" onclick="ndrclick('RMV42');">다른댓글보기</a></li> 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132843660" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132843660&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132843660', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132843660" name="cmt_o_cnt_132843660">0</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132843660&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132843660', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132843660" name="cmt_x_cnt_132843660">6</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132843660" class="usertxt" >
+								유재석이 잘못했네 듣보잡 유재석								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132843660" onclick="return report(this, '132843660', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132843660" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132843660','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132843660" name="reply_cnt_132843660">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132843660"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							bolt****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132842800" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132842800', 'zgnJzMz0aMl8zMh=');" onmouseout="_nc_hide('list_cmtuser_ui_132842800');" class="reico" /><span class="date"><em>|</em> 11.19 14:15</span>
+								<dd id="list_cmtuser_ui_132842800" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132842800');" onmouseout="_nc_hide('list_cmtuser_ui_132842800');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132842800" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132842800');" onmouseout="_nc_hide('list_cmtuser_ui_132842800');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132842800"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132842800" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842800&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842800', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842800" name="cmt_o_cnt_132842800">1</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842800&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842800', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842800" name="cmt_x_cnt_132842800">0</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132842800" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />렉스디란 랩퍼 처음 들어봤는데 목소리 톤 너무 좋다<br />
+물건이다..								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842800" onclick="return report(this, '132842800', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132842800" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842800','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842800" name="reply_cnt_132842800">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132842800"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							clor****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132842701" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132842701', 'zgnJzMz0aMlKbqz=');" onmouseout="_nc_hide('list_cmtuser_ui_132842701');" class="reico" /><span class="date"><em>|</em> 11.19 14:12</span>
+								<dd id="list_cmtuser_ui_132842701" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132842701');" onmouseout="_nc_hide('list_cmtuser_ui_132842701');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132842701" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132842701');" onmouseout="_nc_hide('list_cmtuser_ui_132842701');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132842701"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132842701" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842701&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842701', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842701" name="cmt_o_cnt_132842701">16</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842701&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842701', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842701" name="cmt_x_cnt_132842701">12</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132842701" class="usertxt" >
+								오수민 들어보니까 노래 좋더만 그리고 정인보다 듣기 편하던데??? 정인은 너무 긁으며 불러서 비호감임								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842701" onclick="return report(this, '132842701', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132842701" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842701','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842701" name="reply_cnt_132842701">3</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132842701"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							spar****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132842390" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132842390', 'zgnJzWd9bgl7aMz=');" onmouseout="_nc_hide('list_cmtuser_ui_132842390');" class="reico" /><span class="date"><em>|</em> 11.19 14:05</span>
+								<dd id="list_cmtuser_ui_132842390" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132842390');" onmouseout="_nc_hide('list_cmtuser_ui_132842390');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132842390" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132842390');" onmouseout="_nc_hide('list_cmtuser_ui_132842390');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132842390"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132842390" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842390&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842390', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842390" name="cmt_o_cnt_132842390">1</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842390&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842390', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842390" name="cmt_x_cnt_132842390">0</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132842390" class="usertxt" >
+								ㅋㅋ 진짜 리치 사랑해 이말밖엔때 완전 반전이였는데 ㅋㅋㅋ 근데 그 여자은 왜그렇게 뛴거임? 지금까지 이해 못하겠음								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842390" onclick="return report(this, '132842390', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132842390" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842390','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842390" name="reply_cnt_132842390">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132842390"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							izur****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132842385" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132842385', 'zgnJzMz0aMlJzMT=');" onmouseout="_nc_hide('list_cmtuser_ui_132842385');" class="reico" /><span class="date"><em>|</em> 11.19 14:04</span>
+								<dd id="list_cmtuser_ui_132842385" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132842385');" onmouseout="_nc_hide('list_cmtuser_ui_132842385');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132842385" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132842385');" onmouseout="_nc_hide('list_cmtuser_ui_132842385');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132842385"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132842385" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842385&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842385', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842385" name="cmt_o_cnt_132842385">32</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842385&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842385', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842385" name="cmt_x_cnt_132842385">12</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132842385" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />오수민 이번 앨범만 들어본 색히들은 막귀 인정해라 ㅋㅋㅋ<br />
+정인 모창이라니 ㅋㅋㅋㅋㅋ<br />
+예전에 네티즌들은 JK김동욱이 임재범과 비슷하다고 보급형 임재범이라고 하더니 얼척없넹<br />
+오수민이 버벌진트 좋아보여 파트2한거 일단 들어보고<br />
+그 전에 로맨틱데이 라는 곡 들어봐라 나이에 비해 표현력이 깊은 보컬이다 ㅋㅋ<br />
+정인 느낌이 나는건 정인이 유명해서 그런거 아님???<br />
+그럼 투개월 걔는?????								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842385" onclick="return report(this, '132842385', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132842385" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842385','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842385" name="reply_cnt_132842385">7</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132842385"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							lim9****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132842231" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132842231', 'zqnJzqv6zWrKzqP=');" onmouseout="_nc_hide('list_cmtuser_ui_132842231');" class="reico" /><span class="date"><em>|</em> 11.19 14:00</span>
+								<dd id="list_cmtuser_ui_132842231" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132842231');" onmouseout="_nc_hide('list_cmtuser_ui_132842231');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132842231" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132842231');" onmouseout="_nc_hide('list_cmtuser_ui_132842231');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132842231"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132842231" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842231&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842231', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842231" name="cmt_o_cnt_132842231">3</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842231&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842231', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842231" name="cmt_x_cnt_132842231">0</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132842231" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />리치 뮤비가 반전 갑이엿지								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842231" onclick="return report(this, '132842231', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132842231" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842231','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842231" name="reply_cnt_132842231">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132842231"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							cspi****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132842191" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132842191', 'zgnJzMn0zMnJaWh=');" onmouseout="_nc_hide('list_cmtuser_ui_132842191');" class="reico" /><span class="date"><em>|</em> 11.19 13:59</span>
+								<dd id="list_cmtuser_ui_132842191" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132842191');" onmouseout="_nc_hide('list_cmtuser_ui_132842191');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132842191" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132842191');" onmouseout="_nc_hide('list_cmtuser_ui_132842191');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132842191"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132842191" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842191&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132842191', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132842191" name="cmt_o_cnt_132842191">24</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132842191&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132842191', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132842191" name="cmt_x_cnt_132842191">7</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132842191" class="usertxt" >
+								아무리 아이돌도 아니고 인기가 없는 가수라도 기사 댓글 싸지른거보소 ㅋㅋㅋ<br />
+ㅅㅂ 너네는 아이돌 가수 기사가 상위권 올라가도 댓글에 일일히 언플언플 거릴래??<br />
+그리고 정인 카피니 뭐니 하는 놈들아 귀좀 열고 영상 봐라 다양한 음색을 자유롭게 표현하는건 안보임??<br />
+수준들 하고는 쩝...								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132842191" onclick="return report(this, '132842191', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132842191" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<dd id="list_cmtattatch_132842191" class="movieWrap" >
+                                <a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="오수민 - 강남스타일 7인 모창 (정인, 이소라, 김예림, 이소은, 이수영, 바다, 보아)" class="thumb" target="_blank"><img src="http://mpimg.video.cyworld.com/cthumb120x90/http://mpmedia560.video.cyworld.com/img/001/70/00/09/B_20121107081101583525731001.jpg" class="imgThumb" id="imgThumb_132842191" onerror="blankImg2(this,0,0);" alt="" width="78" height="58" /><em class="bg_opacity2">01:40</em><span class="bg_opacity"></span></a>
+                                <div class="movieLink">
+                                    <a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="오수민 - 강남스타일 7인 모창 (정인, 이소라, 김예림, 이소은, 이수영, 바다, 보아)" target="_blank">[네이트] 오수민 - 강남스타일 7인 모창 (정인, 이소라, 김예림, 이소은, 이수영, 바다, 보아)</a>                                                                        <br />
+                                    <a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" class="url" target="_blank">http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&list_type=2&urlstr=video&board_no=43&seq=43&item_seq=101298616&item_seq_main=101298616&folder_part=3</a>
+                                    <p><a href="http://minihp.cyworld.com/pims/main/pims_main.asp?tid=21562941&amp;list_type=2&amp;urlstr=video&amp;board_no=43&amp;seq=43&amp;item_seq=101298616&amp;item_seq_main=101298616&amp;folder_part=3" title="동영상 보기" class="viewMovie" target="_blank">동영상 보기</a></p>
+                                </div>
+                            </dd>
+                            							<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132842191','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132842191" name="reply_cnt_132842191">4</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132842191"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							need****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132841898" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132841898', 'zgnJzMz0aMh6zWv=');" onmouseout="_nc_hide('list_cmtuser_ui_132841898');" class="reico" /><span class="date"><em>|</em> 11.19 13:51</span>
+								<dd id="list_cmtuser_ui_132841898" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132841898');" onmouseout="_nc_hide('list_cmtuser_ui_132841898');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132841898" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132841898');" onmouseout="_nc_hide('list_cmtuser_ui_132841898');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132841898"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132841898" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841898&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841898', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841898" name="cmt_o_cnt_132841898">2</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841898&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841898', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841898" name="cmt_x_cnt_132841898">1</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132841898" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />오수민 옛날부터 정인 카피머신으로 유명했음 ㅋㅋ<br />
+접때 7인 모창으로 정인 음색 따라쟁이 인증했지 ㅋㅋ<br />
+개성이 없어 ㅉㅉ								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841898" onclick="return report(this, '132841898', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132841898" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841898','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841898" name="reply_cnt_132841898">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132841898"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							fogf****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132841737" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132841737', 'zgnJzMz0aMhKbgX=');" onmouseout="_nc_hide('list_cmtuser_ui_132841737');" class="reico" /><span class="date"><em>|</em> 11.19 13:46</span>
+								<dd id="list_cmtuser_ui_132841737" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132841737');" onmouseout="_nc_hide('list_cmtuser_ui_132841737');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132841737" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132841737');" onmouseout="_nc_hide('list_cmtuser_ui_132841737');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132841737"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132841737" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841737&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841737', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841737" name="cmt_o_cnt_132841737">1</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841737&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841737', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841737" name="cmt_x_cnt_132841737">3</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132841737" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />충격 반전은 개뿔...<br />
+남자 주인공은 잘생겼음 ㅇㅇ								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841737" onclick="return report(this, '132841737', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132841737" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841737','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841737" name="reply_cnt_132841737">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132841737"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							moon****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132841657" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132841657', 'zgnJzWhJaqlJaqd=');" onmouseout="_nc_hide('list_cmtuser_ui_132841657');" class="reico" /><span class="date"><em>|</em> 11.19 13:44</span>
+								<dd id="list_cmtuser_ui_132841657" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132841657');" onmouseout="_nc_hide('list_cmtuser_ui_132841657');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132841657" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132841657');" onmouseout="_nc_hide('list_cmtuser_ui_132841657');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132841657"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132841657" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841657&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841657', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841657" name="cmt_o_cnt_132841657">8</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841657&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841657', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841657" name="cmt_x_cnt_132841657">1</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132841657" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />하도 언플 하길래 노래 들어봤는데<br />
+노래는 괜찮더라 언플 할만큼 정성들여 만들었는데<br />
+오수민은 정인 모창이랑 별반다를게없고 남자 랩퍼는 목소린 좋은데<br />
+노래가 구리다.<br />
+유노윤호가 랩하는거랑 뭐가 다르냐. 랩이나 해라<br />
++ 뮤비 연기가 오글육글 거림....<br />
+다른 사람들도 한번 뮤비 검색 해봐서 보면 동감할듯??								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841657" onclick="return report(this, '132841657', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132841657" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841657','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841657" name="reply_cnt_132841657">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132841657"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							faro****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132841437" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132841437', 'zgnJzWX0bqdMaWr=');" onmouseout="_nc_hide('list_cmtuser_ui_132841437');" class="reico" /><span class="date"><em>|</em> 11.19 13:39</span>
+								<dd id="list_cmtuser_ui_132841437" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132841437');" onmouseout="_nc_hide('list_cmtuser_ui_132841437');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132841437" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132841437');" onmouseout="_nc_hide('list_cmtuser_ui_132841437');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132841437"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132841437" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841437&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841437', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841437" name="cmt_o_cnt_132841437">2</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841437&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841437', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841437" name="cmt_x_cnt_132841437">0</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132841437" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />ㅇㅇ								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841437" onclick="return report(this, '132841437', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132841437" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841437','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841437" name="reply_cnt_132841437">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132841437"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							sj_i****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132841372" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132841372', 'zgnJzMzKzgP8aWX=');" onmouseout="_nc_hide('list_cmtuser_ui_132841372');" class="reico" /><span class="date"><em>|</em> 11.19 13:37</span>
+								<dd id="list_cmtuser_ui_132841372" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132841372');" onmouseout="_nc_hide('list_cmtuser_ui_132841372');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132841372" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132841372');" onmouseout="_nc_hide('list_cmtuser_ui_132841372');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132841372"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132841372" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841372&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841372', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841372" name="cmt_o_cnt_132841372">3</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841372&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841372', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841372" name="cmt_x_cnt_132841372">0</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132841372" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />제이켠 다 좋은데 요새들어서 언플이 좀 심한듯 ㅠㅠ								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841372" onclick="return report(this, '132841372', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132841372" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841372','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841372" name="reply_cnt_132841372">0</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132841372"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																								<dl class="cmt_item">
+							<dt>
+							sky8****<img src="http://nimg.nate.com/etc/ui/images/icon/ico_persnal.gif" id="list_cmtuser_btn_132841205" alt="" style="cursor:pointer;" onmouseover="show_cmtuser_ui('list', '132841205', 'zgnJzqTKaMh6bgX=');" onmouseout="_nc_hide('list_cmtuser_ui_132841205');" class="reico" /><span class="date"><em>|</em> 11.19 13:33</span>
+								<dd id="list_cmtuser_ui_132841205" style="display:none;" onmouseover="_nc_show('list_cmtuser_ui_132841205');" onmouseout="_nc_hide('list_cmtuser_ui_132841205');"> 
+									<!-- 기자레이어 --> 
+									<div id="list_cmtuser_uilayer_132841205" class="nameLayer" style="left:92px;top:20px;display:block;" onmouseover="_nc_show('list_cmtuser_ui_132841205');" onmouseout="_nc_hide('list_cmtuser_ui_132841205');"> 
+										<ul> 
+											<li class="clean">클린지수 <strong id="list_clean_idx_132841205"></strong><em>/</em>100점</li> 
+																						 
+										</ul> 
+									</div> 
+									<!-- //기자레이어 --> 
+								</dd> 
+							</dt>
+							<!-- 추천반대 --> 
+							<dd id="list_cmtvote_132841205" class="opinion"> 
+								<div class="upDown">
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841205&amp;vote_point=1&amp;__natkn=" onclick="return vote(this, '132841205', 1,'list');ndrclick('RMV31');" target="cmt_hidden"><em class="up">추천</em></a> <strong id="cmt_o_cnt_132841205" name="cmt_o_cnt_132841205">98</strong></p> 
+									<p class="line"><a href="vote?artc_sq=20121119n11790&amp;cmt_sq=132841205&amp;vote_point=-1&amp;__natkn=" onclick="return vote(this, '132841205', -1,'list');ndrclick('RMV32');" target="cmt_hidden"><em>반대</em></a> <strong id="cmt_x_cnt_132841205" name="cmt_x_cnt_132841205">5</strong></p> 
+								</div> 
+							</dd> 
+							<!-- //추천반대 --> 
+							
+							<!-- 내용 -->
+							<dd id="list_cmtcontent_132841205" class="usertxt" >
+								<img src="http://nimg.nate.com/etc/ui/images/icon/ico_mobile.gif" class="mobileRe" alt="모바일로 남긴 댓글" />댓글이 하나도없는데 30위네..?<br />
+성별반전 이미 10여년전에 H 잊었니 뮤비에서<br />
+엄정화누님이했다.<br />
+언플도 좀 신선한걸로하던가								<a href="reportCheck?artc_sq=20121119n11790&amp;cmt_sq=132841205" onclick="return report(this, '132841205', 'list');" target="cmt_hidden"><img src="http://nimg.nate.com/etc/ui/images/button/btn_report3.gif" width="10" height="11" alt="신고하기" id="list_cmtreport_btn_132841205" /></a> <img src="http://nimg.nate.com/etc/ui/images/icon/ico_new.gif" width="6" height="5" class="new" alt="new" />							</dd> 
+							<!-- //내용 -->
+							
+							<!-- 동영상댓글 -->
+														<!-- //동영상댓글 -->
+							
+							<!-- 차단 -->
+														<!-- //차단 -->
+							
+							<dd class="reples">
+								<a href="javascript:;" class="cmtsum hide" onclick="openSubComment('20121119n11790','132841205','list',this,'e0103','');ndrclick('RMV30');">댓글의 댓글 <span class="num" id="reply_cnt_132841205" name="reply_cnt_132841205">10</span></a><!-- S: 댓글의 댓글 숨긴영역 -->
+			
+																<div style="display:none" id="divReply_list_132841205"></div>
+								<!-- E: 댓글의 댓글 숨긴영역 -->
+							</dd>
+						</dl>
+																		<!-- E :: 일반 댓글 -->
+					</div>
+						
+					<!-- Comment Paging -->
+					<script type="text/javascript">
+//<![CDATA[
+	function SetNdrNScroll(bWithScrollTop) {
+		if (bWithScrollTop=='Y') {
+			top.window.scroll(0,0);
+		}
+		ndrclick('RMV39');	
+	}
+//]]>
+</script>
+<div class="paging_wrap">
+		 
+		<a href="/Comment/ArticleComment/List?artc_sq=20121119n11790&amp;order=&amp;cmtr_fl=0&amp;prebest=0&amp;newstalk=0&amp;clean_idx=&amp;user_nm=&amp;fold=&amp;mid=e0103&amp;domain=&amp;vodList=0&amp;return_sq=&amp;twitterAuth=N&amp;connectAuth=N&amp;page=1#comment" onclick="SetNdrNScroll('');" class="on">1</a>    	 		
+		</div>					<!-- Comment Paging : E -->
+						
+											</div>
+								
+		<!-- S : 선플문화 -->
+		<!-- 선플문화 -->
+<div class="goodReply">
+	<strong>배려가 있는 댓글이 아름답습니다.</strong>
+	<p class="text">
+		명예훼손, 개인정보 유출, 인격권 침해, 허위사실 유포 등은 이용약관 및 관련법률에 의해 <br />
+		제재를 받을 수 있습니다. 건전한 댓글문화 정착을 위해 이용에 주의를 부탁드립니다. 
+	</p>
+	<span class="link"><a href="http://clean.nate.com/contents/good01.asp" target="_blank" onclick="ndrclick('RMV43');">선플 캠페인 보기</a></span>
+	<span class="link"><a href="javascript:ndrclick('RMV21');OpenOperText();" onclick="ndrclick('RMV44');">운영원칙 보기</a></span>
+</div>
+<br />
+<!-- //선플문화 -->		<!-- E : 선플문화 -->
+		
+	</div>
+	<script type="text/javascript">
+    //<![CDATA[
+    	CyWebFont.LoadNoColor(null, true);
+    	// 관심지수용 데이터
+		if (eval(objCmt = parent.document.getElementById('rankCmtCnt'))) {
+    		objCmt.value = 14;
+		}
+	//]]>	
+	//]]>		
+	</script>
+
+	<!-- ndr code -->
+		
+	<!-- //ndr code -->
+</body>
+</html>

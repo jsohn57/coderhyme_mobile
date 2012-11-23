@@ -1,0 +1,21 @@
+var fs = require("fs");
+var express = require("express");
+var site = express.createServer();
+
+site.use(express.static(__dirname + '/..'));
+site.use(express.favicon("./favicon.ico"));
+
+
+// v1 API
+var api = require('../serv/api.js')
+site.get("/v1/channels/:category", api.channels );
+site.get("/v1/visits", api.visits );
+
+site.get("*", function(req, res) {
+	api.visit();
+  fs.createReadStream("./index.html").pipe(res);
+});
+
+site.listen(1337);
+
+console.log("Server listening on http://localhost:1337");
